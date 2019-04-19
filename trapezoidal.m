@@ -1,0 +1,10 @@
+function [x] = trapezoidal(f,a,b,n)
+  h = (b-a)/n;
+  X = (a:h:b);
+  Y = zeros(n+1);
+  for i = (1:n+1)
+    Y(i) = f(X(i));
+  end
+  x = Y(1) + Y(n+1) + 2*sum(Y(2:n))
+  x = x * (h/2)
+end
